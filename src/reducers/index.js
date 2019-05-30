@@ -18,4 +18,4 @@ const searchResults = (state = [], action) => {
     }
 }
 
-export default combineReducers({ reducer })
+export default combineReducers({ myMovieList, searchResults })

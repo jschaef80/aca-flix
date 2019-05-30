@@ -11,20 +11,20 @@
 
 ### Do
 
-### Components
+### Components √√√
 * Create functional components as defined by comments in the jsx in App.js,  such as  {/*  <Navigation>   */}
 * Import and use components in App.js
 * Navigation.js
 * UserProfile.js
 
-### State
+### State √√√
 * In state.js file
 * Create our state object with properties
     * searchResults: []
     * myMovieList: []
 * export state object
 
-### Reducers
+### Reducers √√√
 * In reducers/index.js
 * Create reducers functions for all state
 * Parameters - state, action
@@ -32,7 +32,7 @@
 * Import combineReducers from redux
 * Combine reducers and export
 
-### Create Reducers
+### Create Reducers √√√
 * myMovieList
     * Look for the action “MY_MOVIE_LIST_LOADED”
     * return the value
@@ -52,22 +52,22 @@
 
 ### Actions
 * remember to export your actions
-* loadMyMovieList()
+* loadMyMovieList() √√√
     * type = “LOAD_MY_MOVIE_LIST”
     * make fetch call to “/movies”
     * on complete, dispatch to myMovieListLoaded(movies)
-* myMovieListLoaded(movies)
+* myMovieListLoaded(movies) v√√
     * type = “MY_MOVIE_LIST_LOADED”
     * value = movies 
-* loadSearch(searchTerm)
+* loadSearch(searchTerm) √√√
     * type = “LOAD_SEARCH”
     * make fetch call to https://api.themoviedb.org/3/search/multi?query=searchTerm&api_key=yourkey
     * be sure to put your api key
     * on complete, dispatch to searchLoaded(movies)
-* searchLoaded(movies)
+* searchLoaded(movies) √√√
     * type = “SEARCH_RESULTS_LOADED”
     * value = make sure to assign the value of movies.results to get the array of movies from movie db
-* saveMyMovie(movie)
+* saveMyMovie(movie) √√√
     * make fetch POST to “/movies”
     * on complete dispatch to loadMyMovieList()
 * removeMyMovie(id)
