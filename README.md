@@ -70,7 +70,7 @@
 * saveMyMovie(movie) √√√
     * make fetch POST to “/movies”
     * on complete dispatch to loadMyMovieList()
-* removeMyMovie(id)
+* removeMyMovie(id) √√√
     * make a fetch DELETE to “/movies/” + id
     * on complete dispatch to loadMyMovieList()
 
