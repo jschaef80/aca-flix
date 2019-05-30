@@ -81,19 +81,19 @@
 * mapDispatchToProps
 * connect and export
 
-### SearchBoxContainer.js
+### SearchBoxContainer.js √√√
 * import SearchBox
 * import action `loadSearch`
 * mapDispatchToProps for this action
 * Determine which props to map to based on the props that are already coded into the SearchBox component
 
-### AppContainer.js
+### AppContainer.js √√√
 * import App
 * import action `loadMyMovieList`
 * mapStateToProps for props `searchResults` and `myMovieList` to state of the same name
 * mapDisptachToProps for `loadMyMovieList`
 
-### ListToggleContainer
+### ListToggleContainer √√√
 * import ListToggle
 * import action `saveMyMovie` and `removeMyMovie`
 * mapDisptachToProps for `saveMyMovie` and `removeMyMovie`
