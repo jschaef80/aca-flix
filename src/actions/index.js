@@ -1,4 +1,11 @@
-const loadMyMovieList = () => {
+export const myMovieListLoaded = (movies) => {
+    return {
+        type: "MY_MOVIE_LIST_LOADED",
+        value: movies
+    };
+}
+
+export const loadMyMovieList = () => {
     return (dispatch) => {
         fetch('/movies')
         .then(res => {return res.json()})
@@ -6,14 +13,14 @@ const loadMyMovieList = () => {
     }
 }
 
-const myMovieListLoaded = (movies) => {
+export const searchLoaded = (movies) => {
     return {
-        type: "MY_MOVIE_LIST_LOADED",
-        value: movies
-    };
+    type: "SEARCH_RESULTS_LOADED",
+    value: movies.results
+    }
 }
 
-const loadSearch = (searchTerm) => {
+export const loadSearch = (searchTerm) => {
     return function (dispatch) {
         fetch('https://api.themoviedb.org/3/search/multi?query=searchTerm&api_key=e2e36515bf90a4dc69c62966e94e6b4a')
             .then((res) => {
@@ -26,14 +33,8 @@ const loadSearch = (searchTerm) => {
 }
 
 
-const searchLoaded = (movies) => {
-    return {
-    type: "SEARCH_RESULTS_LOADED",
-    value: movies.results
-    }
-}
 
-const saveMyMovie = (movie) => {
+export const saveMyMovie = (movie) => {
     return function (dispatch) {
         fetch("/movies", {method: "post"})
         .then((res) => {
@@ -45,16 +46,16 @@ const saveMyMovie = (movie) => {
     }
 }
 
-const removeMyMovie = (id) => {
-    return function (dispatch) {
-        fetch("/movies/${id}", {method: "delete"})
+export const removeMyMovie = (id) => {
+        return function (dispatch) {
+            fetch(`/movies/${id}`, {method: "delete"})
+        
+        .then((res) => {
+            return res.json();
+        })
+        .then((movies) => {
+            dispatch(loadMyMovieList())
+    
+        })
     }
-    .then((res) => {
-        return res.json();
-    })
-    .then((movies) => {
-        dispatch(loadMyMovieList())
-    })
 }
-
-export default {loadMyMovieList, myMovieListLoaded, loadSearch, searchLoaded, saveMyMovie, removeMyMovie}

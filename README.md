@@ -99,21 +99,21 @@
 * mapDisptachToProps for `saveMyMovie` and `removeMyMovie`
 * Change Item.js to use ListToggleContainer instead of ListToggle
 
-### SearchBox.js
+### SearchBox.js √√√
 * In the constructor assign a state property with an object with key “searchTerm”, set to blank string “”
 * Add onChange to the input element
 * on change setState for searchTerm to the value from the input
 
-### Item.js
+### Item.js √√√
 * Switch out use of ListToggle for use of ListToggleContainer
 
 ### App.js
 * Add componentDidMount method and call loadMyMovieList in here.
-* Switch out use of SearchBox for use of SearchBoxContainer
+* Switch out use of SearchBox for use of SearchBoxContainer /* app breaks when I do this step */
 * Add PropTypes for searchResults and myMovieList
 
 ### index.js
-* Switch out use of App for AppContainer
+* Switch out use of App for AppContainer /* app breaks when I do this step */
 
 ### Points
 * Base - 25 
