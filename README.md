@@ -110,7 +110,6 @@
 ### App.js
 * Add componentDidMount method and call loadMyMovieList in here.
 * Switch out use of SearchBox for use of SearchBoxContainer /* app breaks when I do this step */
-* Add PropTypes for searchResults and myMovieList
 
 ### index.js
 * Switch out use of App for AppContainer /* app breaks when I do this step */

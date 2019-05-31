@@ -22,7 +22,7 @@ export const searchLoaded = (movies) => {
 
 export const loadSearch = (searchTerm) => {
     return function (dispatch) {
-        fetch('https://api.themoviedb.org/3/search/multi?query=searchTerm&api_key=e2e36515bf90a4dc69c62966e94e6b4a')
+        fetch(`https://api.themoviedb.org/3/search/multi?query=${searchTerm}&api_key=e2e36515bf90a4dc69c62966e94e6b4a`)
             .then((res) => {
                 return res.json()
             })
@@ -36,7 +36,13 @@ export const loadSearch = (searchTerm) => {
 
 export const saveMyMovie = (movie) => {
     return function (dispatch) {
-        fetch("/movies", {method: "post"})
+        fetch("/movies", {
+            method: "post",
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(movie)
+        })
         .then((res) => {
             return res.json();
         })
